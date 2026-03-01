@@ -30,10 +30,10 @@ export function SiteHeader() {
             aria-label="Ana Luiza — home"
           >
             <Image
-              src="/Ana Luiza Logo.png"
+              src="/logo.png"
               alt="Ana Luiza"
-              height={28}
-              width={120}
+              height={131}
+              width={500}
               className="h-7 w-auto"
               priority
             />
