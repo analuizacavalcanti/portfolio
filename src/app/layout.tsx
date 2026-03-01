@@ -59,7 +59,7 @@ export default function RootLayout({
             Skip to content
           </a>
           <SiteHeader />
-          <main id="main-content">{children}</main>
+          <main id="main-content" className="relative z-10 bg-background">{children}</main>
           <SiteFooter />
         </ThemeProvider>
       </body>
