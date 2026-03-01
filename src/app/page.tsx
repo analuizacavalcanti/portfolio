@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/Container";
-import { H1, H3, Lead, Kicker, P, InlineLink } from "@/components/typography";
+import { H1, H3, Kicker, Lead, P, InlineLink } from "@/components/typography";
 import { caseStudies } from "@/data/case-studies";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -53,16 +53,12 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-8 gap-x-6">
             {/* Title — cols 1–6 */}
             <div className="md:col-span-6">
-              <H1 className="mb-8 text-foreground">
-                My work lives where
-                <br />
-                logic meets play.
+              <H1 className="mb-6 text-foreground text-4xl md:text-5xl lg:text-6xl">
+                My work lives where logic meets play.
               </H1>
-              <Lead className="text-4xl">
-                Color, pattern, type, and structure — melting together into bold
-                visual stories. From design systems to brand, I bring all sides of
-                my practice together.
-              </Lead>
+              <p className="font-sans text-4xl leading-[1.05] tracking-[-0.02em] md:text-5xl lg:text-6xl text-foreground/50">
+                Color, pattern, type, and structure, melting into bold visual stories. From design systems to brand, I bring all sides of my practice together.
+              </p>
             </div>
 
             {/* Right rail — cols 7–8, bottom-aligned */}
