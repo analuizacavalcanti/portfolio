@@ -48,7 +48,7 @@ const clients = [
 
 const contentItems = [
   { type: "Talk", title: "Unfair by Design", venue: "Creative Mornings Düsseldorf", date: "April 4, 2025" },
-  { type: "Talk", title: "Into Design Systems", venue: "Düsseldorf Chapter", date: "April 2, 2025" },
+  { type: "Hosting", title: "Into Design Systems", venue: "Düsseldorf Chapter", date: "April 2, 2025" },
   { type: "Talk", title: "Designers Shift!", venue: "Service Design Drinks Cologne", date: "January 31, 2024" },
   { type: "Talk", title: "Female Founders", venue: "Hochschule Düsseldorf", date: "October 8, 2023" },
   { type: "Talk", title: "Kreativ & Erfolgreich", venue: "Start-Up Woche Düsseldorf", date: "September 4, 2019" },
@@ -64,10 +64,10 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-8 gap-x-6">
             <div className="md:col-span-6">
               <H1 className="text-foreground text-5xl md:text-6xl lg:text-[3.5rem]">
-                My work lives where logic meets play.
+                My work lives where visual design meets strategy.
               </H1>
               <p className="font-sans text-5xl leading-[1.05] tracking-[-0.02em] md:text-6xl lg:text-[3.5rem] text-foreground/50">
-                I am a lead product designer, creating work that combines strategy with strong visuals. Design is the essence of everything I do.
+              As a lead product designer, I turn complexity into structure, and chaos into clarity.
               </p>
             </div>
 
@@ -170,10 +170,6 @@ export default function HomePage() {
                 </P>
                 <P>
                 I&apos;ve led design system initiatives at enterprise scale, run brand and web projects for studios and independent clients, and built a workshop practice that reached hundreds of participants online and offline.
-              </P>
-              <P>
-                I believe design is never just visual. It&apos;s structural and
-                strategic. It&apos;s about intention and inclusion.
               </P>
               <P>
                 Based in <strong>Düsseldorf, Germany</strong>. Available for select

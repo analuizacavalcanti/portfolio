@@ -13,6 +13,10 @@ const socialLinks = [
     href: "https://www.pinterest.com/analuizaaa",
     label: "Pinterest",
   },
+  {
+    href: "https://analuiza.kit.com",
+    label: "Newsletter",
+  },
 ];
 
 export function SiteFooter() {

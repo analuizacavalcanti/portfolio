@@ -54,7 +54,7 @@
 }
 
 :root {
-  --vivid: oklch(0.76 0.20 333);          /* bubblegum pink anchor */
+  --vivid: oklch(0.84 0.12 335);          /* bubblegum pink anchor */
   --hi: var(--muted-foreground);           /* muted: gray text accents */
   --hi-strong: var(--foreground);          /* muted: dark line accents */
   --link-deco: oklch(0 0 0 / 25%);        /* muted: faint black underline */
@@ -98,32 +98,32 @@
 
 .vivid,
 html.vivid body {
-  background: oklch(0.76 0.20 333);
+  background: oklch(0.84 0.12 335);
   color: oklch(0.15 0 0);
 }
 
 .vivid {
-  /* Full theme flip — bubblegum pink bg, dark text */
-  --background: oklch(0.76 0.20 333);
+  /* Full theme flip — soft pink bg, dark text */
+  --background: oklch(0.84 0.12 335);
   --foreground: oklch(0.15 0 0);
-  --card: oklch(0.71 0.18 333);
+  --card: oklch(0.80 0.10 335);
   --card-foreground: oklch(0.15 0 0);
-  --popover: oklch(0.71 0.18 333);
+  --popover: oklch(0.80 0.10 335);
   --popover-foreground: oklch(0.15 0 0);
   --primary: oklch(0.15 0 0);
-  --primary-foreground: oklch(0.76 0.20 333);
-  --secondary: oklch(0.71 0.18 333);
+  --primary-foreground: oklch(0.84 0.12 335);
+  --secondary: oklch(0.80 0.10 335);
   --secondary-foreground: oklch(0.15 0 0);
-  --muted: oklch(0.70 0.17 333);
-  --muted-foreground: oklch(0.30 0.05 333);
-  --accent: oklch(0.71 0.18 333);
+  --muted: oklch(0.79 0.09 335);
+  --muted-foreground: oklch(0.35 0.05 335);
+  --accent: oklch(0.80 0.10 335);
   --accent-foreground: oklch(0.15 0 0);
-  --border: oklch(0 0 0 / 15%);
-  --input: oklch(0 0 0 / 15%);
-  --ring: oklch(0 0 0 / 40%);
+  --border: oklch(0 0 0 / 12%);
+  --input: oklch(0 0 0 / 12%);
+  --ring: oklch(0 0 0 / 35%);
   --hi: oklch(0.15 0 0);
   --hi-strong: oklch(0.15 0 0);
-  --link-deco: oklch(0 0 0 / 30%);
+  --link-deco: oklch(0 0 0 / 25%);
   --link-deco-hover: oklch(0 0 0);
 }
 
