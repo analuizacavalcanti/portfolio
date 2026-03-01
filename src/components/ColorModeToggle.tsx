@@ -13,10 +13,11 @@ export function ColorModeToggle() {
       aria-label={isVivid ? "Switch to muted colors" : "Switch to vivid colors"}
       aria-pressed={isVivid}
       className={cn(
-        "h-[14px] w-[14px] shrink-0 rounded-full border transition-colors duration-300",
+        "h-4 w-4 shrink-0 rounded-full transition-colors duration-300",
+        // ring avoids the global `* { border-color: border }` override
         isVivid
-          ? "border-[var(--vivid)] bg-[var(--vivid)]"
-          : "border-muted-foreground bg-transparent hover:border-foreground"
+          ? "bg-white ring-1 ring-white"
+          : "bg-transparent ring-1 ring-[var(--muted-foreground)] hover:ring-[var(--foreground)]"
       )}
     />
   );

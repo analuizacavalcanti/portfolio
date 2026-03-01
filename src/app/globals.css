@@ -54,18 +54,37 @@
 
 /* ––– Vivid color mode ––– */
 :root {
-  --vivid: oklch(0.52 0.24 255);         /* electric blue anchor */
-  --hi: var(--muted-foreground);          /* accent text — gray in muted, blue in vivid */
-  --hi-strong: var(--foreground);         /* accent lines — near-black in muted, blue in vivid */
-  --link-deco: oklch(0 0 0 / 25%);       /* link underline default */
-  --link-deco-hover: oklch(0 0 0 / 100%);/* link underline hover */
+  --vivid: oklch(0.52 0.24 255);          /* electric blue */
+  --hi: var(--muted-foreground);           /* muted: gray text accents */
+  --hi-strong: var(--foreground);          /* muted: dark line accents */
+  --link-deco: oklch(0 0 0 / 25%);        /* muted: faint black link underline */
+  --link-deco-hover: oklch(0 0 0 / 100%); /* muted: solid black on hover */
 }
 
 .vivid {
-  --hi: var(--vivid);
-  --hi-strong: var(--vivid);
-  --link-deco: oklch(0.52 0.24 255 / 45%);
-  --link-deco-hover: oklch(0.52 0.24 255);
+  /* Full theme flip — blue bg, white text */
+  --background: oklch(0.52 0.24 255);
+  --foreground: oklch(1 0 0);
+  --card: oklch(0.47 0.22 255);
+  --card-foreground: oklch(1 0 0);
+  --popover: oklch(0.47 0.22 255);
+  --popover-foreground: oklch(1 0 0);
+  --primary: oklch(1 0 0);
+  --primary-foreground: oklch(0.52 0.24 255);
+  --secondary: oklch(0.47 0.22 255);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.46 0.21 255);
+  --muted-foreground: oklch(0.88 0.04 255);
+  --accent: oklch(0.47 0.22 255);
+  --accent-foreground: oklch(1 0 0);
+  --border: oklch(1 0 0 / 18%);
+  --input: oklch(1 0 0 / 18%);
+  --ring: oklch(1 0 0 / 60%);
+  /* Accent tokens → white in vivid */
+  --hi: oklch(1 0 0);
+  --hi-strong: oklch(1 0 0);
+  --link-deco: oklch(1 0 0 / 40%);
+  --link-deco-hover: oklch(1 0 0);
 }
 
 :root {

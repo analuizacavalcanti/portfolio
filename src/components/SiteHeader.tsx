@@ -20,13 +20,13 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
       <Container>
         <nav
-          className="flex h-14 items-center justify-between"
+          className="flex h-14 justify-between"
           aria-label="Main navigation"
         >
           {/* Logo */}
           <Link
             href="/"
-            className="transition-opacity duration-150 hover:opacity-70 focus-visible:opacity-70"
+            className="flex items-center transition-opacity duration-150 hover:opacity-70 focus-visible:opacity-70"
             aria-label="Ana Luiza — home"
           >
             <Image
@@ -34,13 +34,13 @@ export function SiteHeader() {
               alt="Ana Luiza"
               height={131}
               width={500}
-              className="h-7 w-auto"
+              className="h-[34px] w-auto"
               priority
             />
           </Link>
 
           {/* Nav links + color mode toggle */}
-          <ul className="flex items-center gap-7" role="list">
+          <ul className="flex h-full items-center gap-7" role="list">
             {navLinks.map(({ href, label }) => {
               const isActive =
                 pathname === href || pathname.startsWith(href + "/");
