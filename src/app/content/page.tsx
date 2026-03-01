@@ -88,27 +88,39 @@ export default function ContentPage() {
   return (
     <div className="py-20 md:py-28">
       <Container>
-        {/* Header */}
-        <header className="mb-20 max-w-2xl">
-          <Kicker className="mb-5">Content</Kicker>
-          <H1 className="mb-6">Speaking & Hosting</H1>
-          <P className="text-muted-foreground">
-            Talks and facilitation on design systems, accessibility, creative
-            entrepreneurship, and the honest realities of design work.
-          </P>
+        {/* Header — kicker in left rail */}
+        <header className="mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-8 gap-x-6">
+            <div className="md:col-span-1 flex items-start pt-1">
+              <Kicker>Content</Kicker>
+            </div>
+            <div className="md:col-span-5 mt-4 md:mt-0">
+              <H1 className="mb-6">Speaking & Hosting</H1>
+              <P className="text-muted-foreground">
+                Talks and facilitation on design systems, accessibility, creative
+                entrepreneurship, and the honest realities of design work.
+              </P>
+            </div>
+          </div>
         </header>
 
-        {/* Content list */}
+        {/* Speaking list — asymmetric: date / title / venue */}
         <div className="divide-y divide-border mb-28">
           {contentItems.map((item, i) => (
-            <div key={i} className="py-8 grid gap-3 sm:grid-cols-[160px_1fr]">
-              <div>
+            <div
+              key={i}
+              className="grid grid-cols-1 md:grid-cols-8 gap-x-6 gap-y-1 py-8"
+            >
+              {/* Date — col 1–2 */}
+              <div className="md:col-span-2">
                 <span className="font-mono text-xs text-muted-foreground">
                   {item.date ?? item.year}
                 </span>
               </div>
-              <div>
-                <div className="flex flex-wrap items-baseline gap-3 mb-1">
+
+              {/* Badge + title — cols 3–6 */}
+              <div className="md:col-span-4">
+                <div className="flex flex-wrap items-baseline gap-3">
                   <Badge
                     variant={badgeVariantMap[item.type]}
                     className="text-xs font-normal shrink-0"
@@ -117,9 +129,13 @@ export default function ContentPage() {
                   </Badge>
                   <H3 className="text-base font-semibold">{item.title}</H3>
                 </div>
-                <p className="font-sans text-xs text-muted-foreground">
+              </div>
+
+              {/* Venue — cols 7–8, right-aligned */}
+              <div className="md:col-span-2 md:text-right">
+                <span className="font-sans text-xs text-muted-foreground">
                   {item.venue}
-                </p>
+                </span>
               </div>
             </div>
           ))}
@@ -127,25 +143,37 @@ export default function ContentPage() {
 
         <Separator className="mb-20" />
 
-        {/* CV section */}
+        {/* Experience — kicker left rail */}
         <section>
-          <Kicker className="mb-10">Experience</Kicker>
+          <div className="grid grid-cols-1 md:grid-cols-8 gap-x-6 mb-10">
+            <div className="md:col-span-1">
+              <Kicker>CV</Kicker>
+            </div>
+          </div>
+
           <div className="divide-y divide-border">
             {experience.map((job) => (
               <div
                 key={job.company + job.role}
-                className="py-8 grid gap-2 sm:grid-cols-[200px_1fr]"
+                className="grid grid-cols-1 md:grid-cols-8 gap-x-6 gap-y-2 py-8"
               >
-                <div>
+                {/* Period — col 1–2 */}
+                <div className="md:col-span-2">
                   <span className="font-mono text-xs text-muted-foreground">
                     {job.period}
                   </span>
                 </div>
-                <div>
+
+                {/* Role + company — cols 3–5 */}
+                <div className="md:col-span-3">
                   <H3 className="text-base mb-0.5">{job.role}</H3>
-                  <p className="font-sans text-sm font-medium text-muted-foreground mb-2">
+                  <p className="font-sans text-sm font-medium text-muted-foreground">
                     {job.company}
                   </p>
+                </div>
+
+                {/* Note — cols 6–8 */}
+                <div className="md:col-span-3">
                   <P className="text-sm text-muted-foreground mb-0">
                     {job.note}
                   </P>
@@ -163,9 +191,7 @@ export default function ContentPage() {
               { value: "4.9", label: "Avg. rating" },
             ].map(({ value, label }) => (
               <div key={label} className="border border-border p-6">
-                <p className="font-sans text-4xl tracking-tight mb-1">
-                  {value}
-                </p>
+                <p className="font-sans text-4xl tracking-tight mb-1">{value}</p>
                 <p className="font-sans text-xs text-muted-foreground uppercase tracking-[0.1em]">
                   {label}
                 </p>

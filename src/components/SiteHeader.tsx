@@ -9,7 +9,6 @@ import { ColorModeToggle } from "./ColorModeToggle";
 
 const navLinks = [
   { href: "/work", label: "Work" },
-  { href: "/about", label: "About" },
   { href: "/content", label: "Content" },
 ];
 
@@ -17,7 +16,7 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
       <Container>
         <nav
           className="flex h-14 justify-between"
@@ -34,7 +33,7 @@ export function SiteHeader() {
               alt="Ana Luiza"
               height={131}
               width={500}
-              className="h-[34px] w-auto"
+              className="h-[34px] w-auto transition-[filter] duration-400 vivid:invert"
               priority
             />
           </Link>

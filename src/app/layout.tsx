@@ -1,14 +1,25 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import localFont from "next/font/local";
+import { IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const circular = localFont({
+  src: [
+    { path: "../../public/fonts/CircularStd-Book.otf", weight: "400", style: "normal" },
+    { path: "../../public/fonts/CircularStd-BookItalic.otf", weight: "400", style: "italic" },
+    { path: "../../public/fonts/CircularStd-Medium.otf", weight: "500", style: "normal" },
+    { path: "../../public/fonts/CircularStd-Bold.otf", weight: "700", style: "normal" },
+  ],
+  variable: "--font-circular",
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: "--font-ibm-plex-mono",
   subsets: ["latin"],
-  // variable font — no weight array needed
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -37,7 +48,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={dmSans.variable}
+      className={`${circular.variable} ${ibmPlexMono.variable}`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: colorModeScript }} />

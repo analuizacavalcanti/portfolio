@@ -3,14 +3,15 @@
 @import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant vivid (&:is(.vivid *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* next/font injects --font-dm-sans and --font-instrument-serif on <html> */
-  --font-sans: var(--font-dm-sans);
+  /* next/font injects --font-circular on <html> */
+  --font-sans: var(--font-circular);
   --font-serif: var(--font-instrument-serif);
-  --font-mono: ui-monospace, "Geist Mono", monospace;
+  --font-mono: var(--font-ibm-plex-mono), ui-monospace, monospace;
   /* vivid mode accent tokens → Tailwind utilities: text-hi, bg-hi, bg-hi-strong */
   --color-hi: var(--hi);
   --color-hi-strong: var(--hi-strong);
@@ -52,39 +53,12 @@
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
-/* ––– Vivid color mode ––– */
 :root {
-  --vivid: oklch(0.52 0.24 255);          /* electric blue */
+  --vivid: oklch(0.52 0.24 255);          /* electric blue anchor */
   --hi: var(--muted-foreground);           /* muted: gray text accents */
   --hi-strong: var(--foreground);          /* muted: dark line accents */
-  --link-deco: oklch(0 0 0 / 25%);        /* muted: faint black link underline */
+  --link-deco: oklch(0 0 0 / 25%);        /* muted: faint black underline */
   --link-deco-hover: oklch(0 0 0 / 100%); /* muted: solid black on hover */
-}
-
-.vivid {
-  /* Full theme flip — blue bg, white text */
-  --background: oklch(0.52 0.24 255);
-  --foreground: oklch(1 0 0);
-  --card: oklch(0.47 0.22 255);
-  --card-foreground: oklch(1 0 0);
-  --popover: oklch(0.47 0.22 255);
-  --popover-foreground: oklch(1 0 0);
-  --primary: oklch(1 0 0);
-  --primary-foreground: oklch(0.52 0.24 255);
-  --secondary: oklch(0.47 0.22 255);
-  --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.46 0.21 255);
-  --muted-foreground: oklch(0.88 0.04 255);
-  --accent: oklch(0.47 0.22 255);
-  --accent-foreground: oklch(1 0 0);
-  --border: oklch(1 0 0 / 18%);
-  --input: oklch(1 0 0 / 18%);
-  --ring: oklch(1 0 0 / 60%);
-  /* Accent tokens → white in vivid */
-  --hi: oklch(1 0 0);
-  --hi-strong: oklch(1 0 0);
-  --link-deco: oklch(1 0 0 / 40%);
-  --link-deco-hover: oklch(1 0 0);
 }
 
 :root {
@@ -120,6 +94,37 @@
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
+}
+
+.vivid,
+html.vivid body {
+  background: oklch(0.52 0.24 255);
+  color: oklch(1 0 0);
+}
+
+.vivid {
+  /* Full theme flip — blue bg, white text */
+  --background: oklch(0.52 0.24 255);
+  --foreground: oklch(1 0 0);
+  --card: oklch(0.47 0.22 255);
+  --card-foreground: oklch(1 0 0);
+  --popover: oklch(0.47 0.22 255);
+  --popover-foreground: oklch(1 0 0);
+  --primary: oklch(1 0 0);
+  --primary-foreground: oklch(0.52 0.24 255);
+  --secondary: oklch(0.47 0.22 255);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.46 0.21 255);
+  --muted-foreground: oklch(0.88 0.04 255);
+  --accent: oklch(0.47 0.22 255);
+  --accent-foreground: oklch(1 0 0);
+  --border: oklch(1 0 0 / 18%);
+  --input: oklch(1 0 0 / 18%);
+  --ring: oklch(1 0 0 / 60%);
+  --hi: oklch(1 0 0);
+  --hi-strong: oklch(1 0 0);
+  --link-deco: oklch(1 0 0 / 40%);
+  --link-deco-hover: oklch(1 0 0);
 }
 
 .dark {
@@ -162,6 +167,7 @@
     font-family: var(--font-sans), system-ui, sans-serif;
     font-size: 1rem;
     line-height: 1.75;
+    transition: background 0.4s ease, color 0.4s ease;
   }
 
   /* ––– Accessibility ––– */
