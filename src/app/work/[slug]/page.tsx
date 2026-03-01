@@ -45,7 +45,7 @@ export default async function CaseStudyPage({ params }: Props) {
           <div className="max-w-3xl">
             <Kicker className="mb-5">Case Study — {study.role}</Kicker>
             <H1 className="mb-4">{study.title}</H1>
-            <p className="font-serif text-2xl text-muted-foreground mb-10 tracking-[-0.01em]">
+            <p className="font-sans text-2xl text-muted-foreground mb-10 tracking-[-0.01em]">
               {study.tagline}
             </p>
 
@@ -82,7 +82,7 @@ export default async function CaseStudyPage({ params }: Props) {
         <Container size="default">
           {/* Summary */}
           <div className="mb-16">
-            <p className="font-serif text-xl leading-[1.7] text-foreground/85 md:text-2xl">
+            <p className="font-sans text-xl leading-[1.7] text-foreground/85 md:text-2xl">
               {study.summary}
             </p>
           </div>

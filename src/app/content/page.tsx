@@ -163,7 +163,7 @@ export default function ContentPage() {
               { value: "4.9", label: "Avg. rating" },
             ].map(({ value, label }) => (
               <div key={label} className="border border-border p-6">
-                <p className="font-serif text-4xl tracking-tight mb-1">
+                <p className="font-sans text-4xl tracking-tight mb-1">
                   {value}
                 </p>
                 <p className="font-sans text-xs text-muted-foreground uppercase tracking-[0.1em]">

@@ -25,7 +25,7 @@ export function SiteHeader() {
           {/* Wordmark */}
           <Link
             href="/"
-            className="font-serif text-[1.0625rem] tracking-[-0.01em] transition-opacity duration-150 hover:opacity-70 focus-visible:opacity-70"
+            className="font-sans text-[1.0625rem] font-medium tracking-[-0.01em] transition-opacity duration-150 hover:opacity-70 focus-visible:opacity-70"
             aria-label="Ana Luiza — home"
           >
             Ana Luiza

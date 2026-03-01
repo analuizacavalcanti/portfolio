@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/Container";
-import { H1, H3, Kicker, Lead, P } from "@/components/typography";
+import { H1, H3, Lead, Kicker, P } from "@/components/typography";
 import { caseStudies } from "@/data/case-studies";
 import { Badge } from "@/components/ui/badge";
 
@@ -11,24 +11,16 @@ export default function HomePage() {
       <section className="border-b border-border py-24 md:py-36">
         <Container>
           <div className="max-w-4xl">
-            <Kicker className="mb-6">Lead Product Designer & Mentor</Kicker>
             <H1 className="mb-8 text-foreground">
               My work lives where
               <br />
               logic meets play.
             </H1>
-            <Lead className="mb-10 max-w-[52ch]">
+            <Lead className="max-w-[52ch] text-4xl">
               Color, pattern, type, and structure — melting together into bold
               visual stories. From design systems to brand, I bring all sides of
               my practice together.
             </Lead>
-            <Link
-              href="/work"
-              className="inline-flex items-center gap-2 font-sans text-sm font-medium text-foreground underline underline-offset-4 decoration-foreground/30 transition-colors hover:decoration-foreground"
-            >
-              View selected work
-              <span aria-hidden="true">→</span>
-            </Link>
           </div>
         </Container>
       </section>
