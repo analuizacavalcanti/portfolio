@@ -9,7 +9,6 @@ import { ColorModeToggle } from "./ColorModeToggle";
 
 const navLinks = [
   { href: "/work", label: "Work" },
-  { href: "/content", label: "Content" },
 ];
 
 export function SiteHeader() {
@@ -33,7 +32,7 @@ export function SiteHeader() {
               alt="Ana Luiza"
               height={131}
               width={500}
-              className="h-[34px] w-auto transition-[filter] duration-400 vivid:invert"
+              className="h-[34px] w-auto transition-[filter] duration-400"
               priority
             />
           </Link>

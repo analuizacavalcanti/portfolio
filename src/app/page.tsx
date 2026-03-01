@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/Container";
-import { H1, H3, Kicker, Lead, P, InlineLink } from "@/components/typography";
+import { H1, H3, Kicker, P, InlineLink } from "@/components/typography";
 import { caseStudies } from "@/data/case-studies";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -25,6 +25,7 @@ const skills = [
 ];
 
 const clients = [
+  "Akris",
   "BCG Digital Ventures",
   "Biotherm",
   "Burberry",
@@ -41,8 +42,18 @@ const clients = [
   "Miu Miu",
   "Shiseido",
   "Soho House",
+  "Total Wine & More",
   "Woolrich",
 ];
+
+const contentItems = [
+  { type: "Talk", title: "Unfair by Design", venue: "Creative Mornings Düsseldorf", date: "April 4, 2025" },
+  { type: "Talk", title: "Into Design Systems", venue: "Düsseldorf Chapter", date: "April 2, 2025" },
+  { type: "Talk", title: "Designers Shift!", venue: "Service Design Drinks Cologne", date: "January 31, 2024" },
+  { type: "Talk", title: "Female Founders", venue: "Hochschule Düsseldorf", date: "October 8, 2023" },
+  { type: "Talk", title: "Kreativ & Erfolgreich", venue: "Start-Up Woche Düsseldorf", date: "September 4, 2019" },
+];
+
 
 export default function HomePage() {
   return (
@@ -51,20 +62,19 @@ export default function HomePage() {
       <section className="border-b border-border py-24 md:py-36">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-8 gap-x-6">
-            {/* Title — cols 1–6 */}
             <div className="md:col-span-6">
-              <H1 className="mb-6 text-foreground text-4xl md:text-5xl lg:text-6xl">
+              <H1 className="text-foreground text-5xl md:text-6xl lg:text-[3.5rem]">
                 My work lives where logic meets play.
               </H1>
-              <p className="font-sans text-4xl leading-[1.05] tracking-[-0.02em] md:text-5xl lg:text-6xl text-foreground/50">
-                Color, pattern, type, and structure, melting into bold visual stories. From design systems to brand, I bring all sides of my practice together.
+              <p className="font-sans text-5xl leading-[1.05] tracking-[-0.02em] md:text-6xl lg:text-[3.5rem] text-foreground/50">
+                I am a lead product designer, creating work that combines strategy with strong visuals. Design is the essence of everything I do.
               </p>
             </div>
 
             {/* Right rail — cols 7–8, bottom-aligned */}
             <div className="hidden md:flex md:col-span-2 flex-col justify-end items-end gap-1 pb-1">
               <span className="font-sans text-xs text-muted-foreground uppercase tracking-[0.1em]">
-                Product Designer
+                hello@analuiza.com
               </span>
               <span className="font-mono text-xs text-muted-foreground">
                 Düsseldorf, DE
@@ -77,7 +87,6 @@ export default function HomePage() {
       {/* ––– Selected Work ––– */}
       <section className="py-24">
         <Container>
-          {/* Section label — left rail */}
           <div className="grid grid-cols-1 md:grid-cols-8 gap-x-6 mb-14">
             <div className="md:col-span-1">
               <Kicker>Work</Kicker>
@@ -91,21 +100,16 @@ export default function HomePage() {
                 href={`/work/${study.slug}`}
                 className="group grid grid-cols-1 md:grid-cols-8 gap-x-6 gap-y-3 py-10 transition-opacity duration-200 hover:opacity-75"
               >
-                {/* Index number */}
                 <div className="hidden md:block md:col-span-1 pt-0.5">
                   <span className="font-mono text-xs text-muted-foreground">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
-
-                {/* Year */}
                 <div className="hidden md:block md:col-span-1 pt-0.5">
                   <span className="font-mono text-xs text-muted-foreground">
                     {study.year}
                   </span>
                 </div>
-
-                {/* Title + summary + tags — cols 3–7 */}
                 <div className="md:col-span-5">
                   <H3 className="mb-3 transition-none">{study.title}</H3>
                   <P className="text-muted-foreground mb-4">{study.summary}</P>
@@ -117,8 +121,6 @@ export default function HomePage() {
                     ))}
                   </div>
                 </div>
-
-                {/* Arrow — col 8, right-aligned */}
                 <div className="hidden md:flex md:col-span-1 justify-end items-start pt-0.5">
                   <span
                     className="font-sans text-xs text-muted-foreground translate-x-0 opacity-0 transition-all duration-200 group-hover:translate-x-1 group-hover:opacity-100 motion-reduce:translate-x-0 motion-reduce:opacity-100"
@@ -136,7 +138,6 @@ export default function HomePage() {
       {/* ––– About ––– */}
       <section className="border-t border-border py-20 md:py-28">
         <Container>
-          {/* Header — offset from col 3 */}
           <header className="mb-20">
             <div className="grid grid-cols-1 md:grid-cols-8 gap-x-6">
               <div className="md:col-start-1 md:col-span-1 flex items-start pt-1">
@@ -146,16 +147,12 @@ export default function HomePage() {
                 <H1 className="mb-8">
                   Design is the essence of everything I do.
                 </H1>
-                <Lead className="max-w-[44ch]">
-                  My work lives where logic meets play: color, pattern, type, and
-                  structure all melting together into bold visual stories.
-                </Lead>
               </div>
             </div>
           </header>
 
-          {/* Photo + Bio — side by side */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 mb-20 mt-16">
+          {/* Photo + Bio */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 mb-20">
             <Image
               src="/images/ana-luiza.jpg"
               alt="Ana Luiza"
@@ -166,30 +163,17 @@ export default function HomePage() {
             />
             <div className="space-y-5 flex flex-col justify-center">
               <P>
-                I&apos;m a multidisciplinary designer — my path isn&apos;t linear,
-                and I bring all my passions and experiences together in my work.
-                This site brings together all sides of my creative practice: from
-                visual art to product design.
+                I&apos;m a multidisciplinary designer, and I like to bring all my passions and experiences together in my work.
               </P>
               <P>
-                Currently, I&apos;m a Lead Product Designer and Mentor at{" "}
-                <InlineLink
-                  href="https://www.thoughtworks.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Thoughtworks
-                </InlineLink>
-                , focused on design systems and accessibility. I&apos;ve led design
-                system initiatives at enterprise scale, run brand and web projects
-                for studios and independent clients, and built a workshop practice
-                that reached 52 sessions across 7 cities and 416 participants.
+                Currently, I&apos;m a Senior Product Designer at Thoughtworks, focused on design systems and accessibility. 
+                </P>
+                <P>
+                I&apos;ve led design system initiatives at enterprise scale, run brand and web projects for studios and independent clients, and built a workshop practice that reached hundreds of participants online and offline.
               </P>
               <P>
-                I believe design is never just visual — it&apos;s structural,
-                strategic, and political. Whether I&apos;m governing a component
-                library or refining a logo&apos;s kerning, the same instinct is at
-                work: make it coherent, make it accessible, make it last.
+                I believe design is never just visual. It&apos;s structural and
+                strategic. It&apos;s about intention and inclusion.
               </P>
               <P>
                 Based in <strong>Düsseldorf, Germany</strong>. Available for select
@@ -200,32 +184,25 @@ export default function HomePage() {
 
           <Separator className="mb-16" />
 
-          {/* Disciplines + Skills — full width, 4-col each */}
+          {/* Disciplines + Skills */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-12 mb-20">
             <section className="col-span-1 md:col-span-2">
               <H3 className="mb-6">What I do</H3>
               <ul className="space-y-3">
                 {disciplines.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span
-                      className="mt-2.5 shrink-0 w-1 h-1 rounded-full bg-hi transition-colors duration-300"
-                      aria-hidden="true"
-                    />
+                    <span className="mt-2.5 shrink-0 w-1 h-1 rounded-full bg-hi transition-colors duration-300" aria-hidden="true" />
                     <span className="text-sm text-foreground/80">{item}</span>
                   </li>
                 ))}
               </ul>
             </section>
-
             <section className="col-span-1 md:col-span-2">
               <H3 className="mb-6">Disciplines</H3>
               <ul className="space-y-3">
                 {skills.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span
-                      className="mt-2.5 shrink-0 w-1 h-1 rounded-full bg-hi transition-colors duration-300"
-                      aria-hidden="true"
-                    />
+                    <span className="mt-2.5 shrink-0 w-1 h-1 rounded-full bg-hi transition-colors duration-300" aria-hidden="true" />
                     <span className="text-sm text-foreground/80">{item}</span>
                   </li>
                 ))}
@@ -233,13 +210,11 @@ export default function HomePage() {
             </section>
           </div>
 
-          {/* Selected clients — full width */}
+          {/* Selected clients */}
           <section className="mb-20">
             <div className="grid grid-cols-1 md:grid-cols-8 gap-x-6">
               <div className="md:col-span-1">
-                <H3 className="mb-6 text-muted-foreground font-medium text-base">
-                  Clients
-                </H3>
+                <Kicker className="mb-6">Clients</Kicker>
               </div>
               <div className="md:col-span-7">
                 <p className="text-sm text-muted-foreground leading-[2]">
@@ -248,20 +223,47 @@ export default function HomePage() {
               </div>
             </div>
           </section>
+        </Container>
+      </section>
 
-          <Separator className="mb-16" />
-
-          {/* CTA */}
-          <div className="grid grid-cols-1 md:grid-cols-8 gap-x-6">
-            <div className="md:col-start-2 md:col-span-5">
-              <P className="mb-0 text-muted-foreground">
-                Interested in working together?{" "}
-                <InlineLink href="mailto:hello@analuiza.com">
-                  hello@analuiza.com
-                </InlineLink>
-              </P>
+      {/* ––– Speaking & Content ––– */}
+      <section className="border-t border-border py-20 md:py-28">
+        <Container>
+          <header className="mb-20">
+            <div className="grid grid-cols-1 md:grid-cols-8 gap-x-6">
+              <div className="md:col-span-1 flex items-start pt-1">
+                <Kicker>Content</Kicker>
+              </div>
+              <div className="md:col-span-5 mt-4 md:mt-0">
+                <H1 className="mb-6">Speaking, Hosting & Facilitation</H1>
+                <P className="text-muted-foreground">
+                  My topics are: design, accessibility, creative
+                  entrepreneurship, and the honest realities of design work.
+                </P>
+              </div>
             </div>
+          </header>
+
+          {/* Speaking list */}
+          <div className="divide-y divide-border mb-20">
+            {contentItems.map((item, i) => (
+              <div key={i} className="grid grid-cols-1 md:grid-cols-8 gap-x-6 gap-y-1 py-8">
+                <div className="md:col-span-2">
+                  <span className="font-mono text-xs text-muted-foreground">{item.date}</span>
+                </div>
+                <div className="md:col-span-4">
+                  <div className="flex flex-wrap items-baseline gap-3">
+                    <Badge variant="default" className="text-xs font-normal shrink-0">{item.type}</Badge>
+                    <H3 className="text-base font-semibold">{item.title}</H3>
+                  </div>
+                </div>
+                <div className="md:col-span-2 md:text-right">
+                  <span className="font-sans text-xs text-muted-foreground">{item.venue}</span>
+                </div>
+              </div>
+            ))}
           </div>
+
         </Container>
       </section>
     </>
