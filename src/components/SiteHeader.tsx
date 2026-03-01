@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Container } from "./Container";
@@ -22,13 +23,20 @@ export function SiteHeader() {
           className="flex h-14 items-center justify-between"
           aria-label="Main navigation"
         >
-          {/* Wordmark */}
+          {/* Logo */}
           <Link
             href="/"
-            className="font-sans text-[1.0625rem] font-medium tracking-[-0.01em] transition-opacity duration-150 hover:opacity-70 focus-visible:opacity-70"
+            className="transition-opacity duration-150 hover:opacity-70 focus-visible:opacity-70"
             aria-label="Ana Luiza — home"
           >
-            Ana Luiza
+            <Image
+              src="/Ana Luiza Logo.png"
+              alt="Ana Luiza"
+              height={28}
+              width={120}
+              className="h-7 w-auto"
+              priority
+            />
           </Link>
 
           {/* Nav links + color mode toggle */}
